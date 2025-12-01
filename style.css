@@ -1,0 +1,96 @@
+:root {
+    --color-primary: #0a0a1a; /* Azul escuro quase preto (Zaun/Piltover) */
+    --color-secondary: #1a1a3a; /* Azul escuro */
+    --color-text-light: #e0e0e0;
+    --color-text-dark: #121212;
+    --color-border: #3a3a5a; /* Borda azulada */
+    --color-highlight-jinx: #00ffff; /* Ciano/Azul Elétrico (Jinx) */
+    --color-highlight-vi: #ff4500; /* Laranja/Vermelho (Vi) */
+    --color-card-bg: #1a1a3a;
+    --color-champ-name: #ffcc00; /* Dourado/Amarelo */
+    --color-background: #0a0a1a;
+}
+
+body {
+    font-family: 'Orbitron', sans-serif; /* Fonte futurista/estilizada */
+    background-color: var(--color-background);
+}
+
+/* Navbar */
+.navbar {
+    background-color: var(--color-primary) !important;
+    border-bottom: 2px solid var(--color-highlight-jinx);
+}
+
+/* Cards */
+.card {
+    background-color: var(--color-card-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 255, 255, 0.2);
+}
+
+/* Inputs */
+input, textarea {
+    background-color: var(--color-secondary) !important;
+    color: var(--color-text-light) !important;
+    border: 1px solid #444 !important; /* Mantendo o #444 para o border, pois não foi definido no root */
+}
+input::placeholder,
+textarea::placeholder {
+    color: #bbb !important;
+}
+
+/* Header */
+header.bg-gradient {
+    background: linear-gradient(to right, var(--color-primary), var(--color-secondary));
+    padding: 80px 0;
+    text-align: center;
+    color: var(--color-text-light);
+    border-bottom: 3px solid var(--color-highlight-vi);
+}
+
+/* Botões personalizados nas abas */
+.tab-btn {
+    border: 1px solid var(--color-highlight-jinx);
+    padding: 8px 14px;
+    margin-right: 8px;
+    background-color: transparent;
+    color: var(--color-highlight-jinx);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.tab-btn.active {
+    background-color: var(--color-highlight-jinx);
+    color: var(--color-primary);
+}
+.tab-btn:hover {
+    background-color: var(--color-highlight-jinx);
+    color: var(--color-primary);
+}
+
+.champ-text{
+    color:var(--color-highlight-vi);
+}
+
+.btn-text{
+    color:var(--color-highlight-jinx);
+}
+
+.border-highlight-jinx {
+    border-color: var(--color-highlight-jinx) !important;
+}
+
+.champ-name{
+    color: var(--color-champ-name);
+    font-size: 1.8rem;
+    border-bottom: 1px solid var(--color-highlight-jinx);
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}

@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personagens</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">League of Legends - Wiki</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="menu">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link active" aria-current="page" href="personagens.html">Personagens</a></li>
+                <li class="nav-item"><a class="nav-link" href="contato.html">Contato</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<main class="container mt-5">
+    <div class="row">
+        <!-- Conteúdo Principal de Personagens -->
+        <div class="col-lg-9">
+            <h2 class="mb-4 text-white"><strong>CAMPEÕES EM DESTAQUE</strong></h2>
+
+            <!-- Filtro de Função -->
+            <div class="mb-4 p-3 card">
+                <h4 class="text-white border-bottom pb-2 mb-3">Filtrar por Função</h4>
+                <div class="d-flex flex-wrap gap-2">
+                    <button class="btn btn-outline-info filter-btn active" data-filter="all">Todos</button>
+                    <button class="btn btn-outline-info filter-btn" data-filter="atirador" id="Atirador">Atirador</button>
+                    <button class="btn btn-outline-info filter-btn" data-filter="mago" id="Mago">Mago</button>
+                    <button class="btn btn-outline-info filter-btn" data-filter="suporte" id="Suporte">Suporte</button>
+                    <button class="btn btn-outline-info filter-btn" data-filter="lutador" id="Lutador">Lutador</button>
+                    <button class="btn btn-outline-info filter-btn" data-filter="tank" id="Tank">Tank</button>
+                </div>
+            </div>
+            <!-- Fim do Filtro de Função -->
+
+<!-- PERSONAGEM MODELO (reutilizável)
+
+    <div class="card mb-4 p-3 shadow border-highlight-jinx">
+        <div class="row g-4 align-items-center">
+            <div class="col-md-4">
+                <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/PERSONAGEM_0.jpg"
+                     class="img-fluid rounded" alt="Ahri">
+            </div>
+
+            <div class="col-md-8">
+                <h3 class="champ-name">PERSONAGEM</h3>
+
+                <button class="tab-btn" data-bs-toggle="collapse" data-bs-target="#ahri-hab"><strong class="btn-text">Habilidades</strong></button>
+                <button class="tab-btn" data-bs-toggle="collapse" data-bs-target="#ahri-lore"><strong class="btn-text">Lore</strong></button>
+
+                <div class="collapse show mt-3" id="ahri-hab">
+                    <p class="champ-text"><strong>Q - NOME SKILL:</strong> DESCRIÇÃO.</p>
+                    <p class="champ-text"><strong>W - NOME SKILL:</strong> DESCRIÇÃO.</p>
+                    <p class="champ-text"><strong>E - NOME SKILL:</strong> DESCRIÇÃO.</p>
+                    <p class="champ-text"><strong>R - NOME SKILL:</strong> DESCRIÇÃO.</p>
+                </div>
+
+                <div class="collapse mt-3" id="ahri-lore">
+                    <p class="champ-text">DESCRIÇÃO DO PERSONAGEM / LORE DO PERSONAGEM.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+-->
+
+
+
+<div id="champion-list">
+    <!-- ATIRADORES -->
+    <div class="card mb-4 p-3 shadow border-highlight-jinx" data-role="atirador">
+        <div class="row g-4 align-items-center">
+            <div class="col-md-4">
+                <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Ashe_0.jpg" class="img-fluid rounded" alt="Ashe">
+            </div>
+            <div class="col-md-8">
+                <h3 class="champ-name">Ashe</h3>
+                <button class="tab-btn" data-bs-toggle="collapse" data-bs-target="#ashe-hab"><strong class="btn-text">Habilidades</strong></button>
+                <button class="tab-btn" data-bs-toggle="collapse" data-bs-target="#ashe-lore"><strong class="btn-text">Lore</strong></button>
+                <div class="collapse show mt-3" id="ashe-hab">
+                    <p class="champ-text"><strong>Q - Concentração:</strong> Aumenta a velocidade de ataque e lança uma rajada de flechas.</p>
+                    <p class="champ-text"><strong>W - Rajada:</strong> Dispara várias flechas em cone.</p>
+                    <p class="champ-text"><strong>E - Vôo do Falcão:</strong> Revela uma área do mapa.</p>
+                    <p class="champ-text"><strong>R - Flecha de Cristal Encantada:</strong> Dispara uma flecha de gelo que atordoa o primeiro campeão inimigo atingido.</p>
+                </div>
+                <div class="collapse mt-3" id="ashe-lore">
+                    <p class="champ-text">A arqueira do gelo, líder de Freljord, busca unir as tribos do norte sob sua bandeira.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card mb-4 p-3 shadow border-highlight-jinx" data-role="atirador">
+        <div class="row g-4 align-items-center">
+            <div class="col-md-4">
+                <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Jinx_0.jpg" class="img-fluid rounded" alt="Jinx">
+            </div>
+            <div class="col-md-8">
+                <h3 class="champ-name">Jinx</h3>
+                <button class="tab-btn" data-bs-toggle="collapse" data-bs-target="#jinx-hab"><strong class="btn-text">Habilidades</strong></button>
+                <button class="tab-btn" data-bs-toggle="collapse" data-bs-target="#jinx-lore"><strong class="btn-text">Lore</strong></button>
+                <div class="collapse show mt-3" id="jinx-hab">
+                    <p class="champ-text"><strong>Q - Troca-troca:</strong> Alterna entre metralhadora e lança-mísseis.</p>
+                    <p class="champ-text"><strong>W - Zap!:</strong> Dispara um raio que causa dano e lentidão.</p>
+                    <p class="champ-text"><strong>E - Mordidinha Flamejante:</strong> Lança armadilhas que prendem inimigos.</p>
+                    <p class="champ-text"><strong>R - Super Mega Míssil da Morte!:</strong> Míssil que viaja pelo mapa e causa dano massivo.</p>
+                </div>
+                <div class="collapse mt-3" id="jinx-lore">
+                    <p class="champ-text">Uma criminosa insana e impulsiva de Zaun, ama explosões e caos. Protagonista de Arcane.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card mb-4 p-3 shadow border-highlight-jinx" data-role="atirador">
+        <div class="row g-4 align-items-center">
+            <div class="col-md-4">
+                <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Caitlyn_0.jpg" class="img-fluid rounded" alt="Caitlyn">
+            </div>
+            <div class="col-md-8">
+                <h3 class="champ-name">Caitlyn</h3>
+                <button class="tab-btn" data-bs-toggle="collapse" data-bs-target="#caitlyn-hab"><strong class="btn-text">Habilidades</strong></button>
+                <button class="tab-btn" data-bs-toggle="collapse" data-bs-target="#caitlyn-lore"><strong class="btn-text">Lore</strong></button>
+                <div class="collapse show mt-3" id="caitlyn-hab">
+                    <p class="champ-text"><strong>Q - Pacificadora de Piltover:</strong> Dispara um tiro de longo alcance.</p>
+                    <p class="champ-text"><strong>W - Armadilha Mecânica Yordle:</strong> Coloca armadilhas que prendem inimigos.</p>
+                    <p class="champ-text"><strong>E - Rede Calibre 90:</strong> Dispara uma rede que a impulsiona para trás.</p>
+                    <p class="champ-text"><strong>R - Ás na Manga:</strong> Mira e dispara um tiro fatal em um único alvo.</p>
+                </div>
+                <div class="collapse mt-3" id="caitlyn-lore">
+                    <p class="champ-text">A melhor pacificadora de Piltover, usa seu rifle para manter a ordem na Cidade do Progresso.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card mb-4 p-3 shadow border-highlight-jinx" data-role="atirador">
+        <div class="row g-4 align-items-center">
+            <div class="col-md-4">
+                <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Vayne_0.jpg" class="img-fluid rounded" alt="Vayne">
+            </div>
+            <div class="col-md-8">
+                <h3 class="champ-name">Vayne</h3>
+                <button class="tab-btn" data-bs-toggle="collapse" data-bs-target="#vayne-hab"><strong class="btn-text">Habilidades</strong></button>
+                <button class="tab-btn" data-bs-toggle="collapse" data-bs-target="#vayne-lore"><strong class="btn-text">Lore</strong></button>
+                <div class="collapse show mt-3" id="vayne-hab">
+                    <p class="champ-text"><strong>Q - Rolamento:</strong> Rola para uma nova posição, fortalecendo o próximo ataque.</p>
+                    <p class="champ-text"><strong>W - Prata:</strong> Causa dano verdadeiro a cada terceiro ataque no mesmo alvo.</p>
+                    <p class="champ-text"><strong>E - Condenar:</strong> Dispara um projétil que empurra o alvo.</p>
+                    <p class="champ-text"><strong>R - Hora Final:</strong> Entra em modo furtivo e ganha bônus de ataque.</p>
+                </div>
+                <div class="collapse mt-3" id="vayne-lore">
+                    <p class="champ-text">Caçadora de demônios de Demacia, busca vingança pela morte de sua família.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card mb-4 p-3 shadow border-highlight-jinx" data-role="atirador">
+        <div class="row g-4 align-items-center">
+            <div class="col-md-4">
+                <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Ezreal_0.jpg" class="img-fluid rounded" alt="Ezreal">
+            </div>
+            <div class="col-md-8">
+                <h3 class="champ-name">Ezreal</h3>
+                <button class="tab-btn" data-bs-toggle="collapse" data-bs-target="#ezreal-hab"><strong class="btn-text">Habilidades</strong></button>
+                <button class="tab-btn" data-bs-toggle="collapse" data-bs-target="#ezreal-lore"><strong class="btn-text">Lore</strong></button>
+                <div class="collapse show mt-3" id="ezreal-hab">
+                    <p class="champ-text"><strong>Q - Disparo Místico:</strong> Dispara um projétil que reduz o tempo de recarga das habilidades.</p>
+                    <p class="champ-text"><strong>W - Fluxo Essencial:</strong> Marca um alvo e explode ao ser atingido por uma habilidade ou ataque.</p>
+                    <p class="champ-text"><strong>E - Translocação Arcana:</strong> Teleporta-se para um local próximo.</p>
+                    <p class="champ-text"><strong>R - Barragem Certeira:</strong> Dispara uma barragem de energia que atravessa o mapa.</p>
+                </div>
+                <div class="collapse mt-3" id="ezreal-lore">
+                    <p class="champ-text">Um aventureiro explorador de Piltover, usa uma manopla mágica para disparar feitiços arcanos.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAGOS -->
+    <div class="card mb-4 p-3 shadow border-highlight-jinx" data-role="mago">
+        <div class="row g-4 align-items-center">
+            <div class="col-md-4">
+                <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Syndra_0.jpg" class="img-fluid rounded" alt="Syndra">
+            </div>
+            <div class="col-md-8">
+                <h3 class="champ-name">Syndra</h3>
+                <button class="tab-btn" data-bs-toggle="collapse" data-bs-target="#syndra-hab"><strong class="btn-text">Habilidades</strong></button>
+                <button class="tab-btn" data-bs-toggle="collapse" data-bs-target="#syndra-lore"><strong class="btn-text">Lore</strong></button>
+                <div class="collapse show mt-3" id="syndra-hab">
+                    <p class="champ-text"><strong>Q - Esfera Negra:</strong> Cria uma esfera de energia escura.</p>
+                    <p class="champ-text"><strong>W - Vontade Inabalável:</strong> Pega e arremessa esferas ou tropas.</p>
+                    <p class="champ-text"><strong>E - Dispersar os Fracos:</strong> Empurra inimigos e esferas, atordoando-os.</p>
+                    <p class="champ-text"><strong>R - Poder Irrestrito:</strong> Dispara todas as esferas em um único alvo.</p>
+                </div>
+                <div class="collapse mt-3" id="syndra-lore">
+                    <p class="champ-text">Uma maga ioniana com poder ilimitado, busca dominar seu próprio destino e derrubar aqueles que a aprisionaram.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card mb-4 p-3 shadow border-highlight-jinx" data-role="mago">
+        <div class="row g-4 align-items-center">
+            <div class="col-md-4">
+                <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Orianna_0.jpg" class="img-fluid rounded" alt="Orianna">
+            </div>
+            <div class="col-md-8">
+                <h3 class="champ-name">Orianna</h3>
+                <button class="tab-btn" data-bs-toggle="collapse" data-bs-target="#orianna-hab"><strong class="btn-text">Habilidades</strong></button>
+                <button class="tab-btn" data-bs-toggle="collapse" data-bs-target="#orianna-lore"><strong class="btn-text">Lore</strong></button>
+                <div class="collapse show mt-3" id="orianna-hab">
+                    <p class="champ-text"><strong>Q - Comando: Atacar:</strong> Envia a Bola para um local, causando dano.</p>
+                    <p class="champ-text"><strong>W - Comando: Dissonância:</strong> Cria uma área de dano e acelera aliados/desacelera inimigos.</p>
+                    <p class="champ-text"><strong>E - Comando: Proteger:</strong> Escuda um aliado e move a Bola para ele.</p>
+                    <p class="champ-text"><strong>R - Comando: Onda de Choque:</strong> Puxa inimigos próximos à Bola e causa dano.</p>
+                </div>
+                <div class="collapse mt-3" id="orianna-lore">
+                    <p class="champ-text">Uma autômata de Piltover, criada para proteger seu pai, usa sua Bola para interagir com o mundo.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card mb-4 p-3 shadow border-highlight-jinx" data-role="mago">
+        <div class="row g-4 align-items-center">
+            <div class="col-md-4">
+                <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Veigar_0.jpg" class="img-fluid rounded" alt="Veigar">
+            </div>
+            <div class="col-md-8">
+                <h3 class="champ-name">Veigar</h3>
+                <button class="tab-btn" data-bs-toggle="collapse" data-bs-target="#veigar-hab"><strong class="btn-text">Habilidades</strong></button>
+                <button class="tab-btn" data-bs-toggle="collapse" data-bs-target="#veigar-lore"><strong class="btn-text">Lore</strong></button>
+                <div class="collapse show mt-3" id="veigar-hab">
+                    <p class="champ-text"><strong>Q - Golpe Maligno:</strong> Dispara energia escura que acerta dois alvos.</p>
+                    <p class="champ-text"><strong>W - Matéria Escura:</strong> Invoca matéria escura do céu.</p>
+                    <p class="champ-text"><strong>E - Horizonte de Eventos:</strong> Cria uma gaiola que atordoa inimigos que a atravessam.</p>
+                    <p class="champ-text"><strong>R - Explosão Final:</strong> Causa dano massivo a um único alvo, escalando com o poder de habilidade.</p>
+                </div>
+                <div class="collapse mt-3" id="veigar-lore">
+                    <p class="champ-text">Um yordle mestre das artes das trevas, busca ser o maior mal de Runeterra, apesar de sua natureza adorável.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card mb-4 p-3 shadow border-highlight-jinx" data-role="mago">
+        <div class="row g-4 align-items-center">
+            <div class="col-md-4">
+                <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Zoe_0.jpg" class="img-fluid rounded" alt="Zoe">
+            </div>
+            <div class="col-md-8">
+                <h3 class="champ-name">Zoe</h3>
+                <button class="tab-btn" data-bs-toggle="collapse" data-bs-target="#zoe-hab"><strong class="btn-text">Habilidades</strong></button>
+                <button class="tab-btn" data-bs-toggle="collapse" data-bs-target="#zoe-lore"><strong class="btn-text">Lore</strong></button>
+                <div class="collapse show mt-3" id="zoe-hab">
+                    <p class="champ-text"><strong>Q - Estrela Desviada:</strong> Lança uma estrela que pode ser redirecionada para causar mais dano.</p>
+                    <p class="champ-text"><strong>W - Roubar Feitiço:</strong> Pega feitiços de invocador e ativos de itens inimigos.</p>
+                    <p class="champ-text"><strong>E - Bolha do Sono:</strong> Lança uma bolha que faz o alvo dormir.</p>
+                    <p class="champ-text"><strong>R - Salto Dimensional:</strong> Teleporta-se para um local e volta em seguida.</p>
+                </div>
+                <div class="collapse mt-3" id="zoe-lore">
+                    <p class="champ-text">A mensageira cósmica do Targon, uma criança travessa que manipula a realidade e o espaço-tempo.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card mb-4 p-3 shadow border-highlight-jinx" data-role="mago">
+        <div class="row g-4 align-items-center">
+            <div class="col-md-4">
+                <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Brand_0.jpg" class="img-fluid rounded" alt="Brand">
+            </div>
+            <div class="col-md-8">
+                <h3 class="champ-name">Brand</h3>
+                <button class="tab-btn" data-bs-toggle="collapse" data-bs-target="#brand-hab"><strong class="btn-text">Habilidades</strong></button>
+                <button class="tab-btn" data-bs-toggle="collapse" data-bs-target="#brand-lore"><strong class="btn-text">Lore</strong></button>
+                <div class="collapse show mt-3" id="brand-hab">
+                    <p class="champ-text"><strong>Q - Incendiar:</strong> Dispara uma bola de fogo.</p>
+                    <p class="champ-text"><strong>W - Coluna de Fogo:</strong> Invoca uma coluna de fogo em uma área.</p>
+                    <p class="champ-text"><strong>E - Chamas:</strong> Incendeia um alvo, espalhando-se se o alvo estiver em chamas.</p>
+                    <p class="champ-text"><strong>R - Piroclasma:</strong> Lança uma bola de fogo que salta entre inimigos.</p>
+                </div>
+                <div class="collapse mt-3" id="brand-lore">
+                    <p class="champ-text">Um ser de fogo vivo, busca a destruição de Runeterra para se libertar de sua prisão de gelo.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SUPORTES -->
+    <div class="card mb-4 p-3 shadow border-highlight-jinx" data-role="suporte">
+        <div class="row g-4 align-items-center">
+            <div class="col-md-4">
+                <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Thresh_0.jpg" class="img-fluid rounded" alt="Thresh">
+            </div>
+            <div class="col-md-8">
+                <h3 class="champ-name">Thresh</h3>
+                <button class="tab-btn" data-bs-toggle="collapse" data-bs-target="#thresh-hab"><strong class="btn-text">Habilidades</strong></button>
+                <button class="tab-btn" data-bs-toggle="collapse" data-bs-target="#thresh-lore"><strong class="btn-text">Lore</strong></button>
+                <div class="collapse show mt-3" id="thresh-hab">
+                    <p class="champ-text"><strong>Q - Sentença:</strong> Lança a corrente para puxar o primeiro inimigo atingido.</p>
+                    <p class="champ-text"><strong>W - Lamparina:</strong> Lança uma lamparina que escuda aliados e permite que se teletransportem até ele.</p>
+                    <p class="champ-text"><strong>E - Esfolar:</strong> Passivamente, causa dano extra; Ativamente, empurra ou puxa inimigos.</p>
+                    <p class="champ-text"><strong>R - A Caixa:</strong> Cria uma prisão de paredes que causam lentidão e dano.</p>
+                </div>
+                <div class="collapse mt-3" id="thresh-lore">
+                    <p class="champ-text">O guardião das correntes, um espectro sádico das Ilhas das Sombras que coleciona almas em sua lamparina.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card mb-4 p-3 shadow border-highlight-jinx" data-role="suporte">
+        <div class="row g-4 align-items-center">
+            <div class="col-md-4">
+                <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Lulu_0.jpg" class="img-fluid rounded" alt="Lulu">
+            </div>
+            <div class="col-md-8">
+                <h3 class="champ-name">Lulu</h3>
+                <button class="tab-btn" data-bs-toggle="collapse" data-bs-target="#lulu-hab"><strong class="btn-text">Habilidades</strong></button>
+                <button class="tab-btn" data-bs-toggle="collapse" data-bs-target="#lulu-lore"><strong class="btn-text">Lore</strong></button>
+                <div class="collapse show mt-3" id="lulu-hab">
+                    <p class="champ-text"><strong>Q - Lança Purpurina:</strong> Dispara um projétil mágico que causa lentidão.</p>
+                    <p class="champ-text"><strong>W - Capricho:</strong> Transforma um inimigo em criatura inofensiva ou acelera um aliado.</p>
+                    <p class="champ-text"><strong>E - Escudo Brilhante:</strong> Escuda um aliado ou causa dano a um inimigo.</p>
+                    <p class="champ-text"><strong>R - Crescimento Selvagem:</strong> Aumenta o tamanho e a vida de um aliado, arremessando inimigos próximos.</p>
+                </div>
+                <div class="collapse mt-3" id="lulu-lore">
+                    <p class="champ-text">Uma fada yordle com magia do mundo das fadas, vê o mundo de uma forma peculiar e usa sua magia para proteger e transformar.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card mb-4 p-3 shadow border-highlight-jinx" data-role="suporte">
+        <div class="row g-4 align-items-center">
+            <div class="col-md-4">
+                <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Blitzcrank_0.jpg" class="img-fluid rounded" alt="Blitzcrank">
+            </div>
+            <div class="col-md-8">
+                <h3 class="champ-name">Blitzcrank</h3>
+                <button class="tab-btn" data-bs-toggle="collapse" data-bs-target="#blitz-hab"><strong class="btn-text">Habilidades</strong></button>
+                <button class="tab-btn" data-bs-toggle="collapse" data-bs-target="#blitz-lore"><strong class="btn-text">Lore</strong></button>
+                <div class="collapse show mt-3" id="blitz-hab">
+                    <p class="champ-text"><strong>Q - Puxão Biônico:</strong> Dispara a mão para puxar o primeiro inimigo atingido.</p>
+                    <p class="champ-text"><strong>W - Sobrecarga:</strong> Ganha velocidade de movimento e ataque, mas fica lento ao final.</p>
+                    <p class="champ-text"><strong>E - Punho do Poder:</strong> Fortalece o próximo ataque para causar dano extra e arremessar o alvo.</p>
+                    <p class="champ-text"><strong>R - Campo Estático:</strong> Causa dano em área e silencia inimigos próximos.</p>
+                </div>
+                <div class="collapse mt-3" id="blitz-lore">
+                    <p class="champ-text">Um golem autômato de Zaun, criado para ajudar os necessitados, mas que se tornou um perigo com seu braço mecânico.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card mb-4 p-3 shadow border-highlight-jinx" data-role="suporte">
+        <div class="row g-4 align-items-center">
+            <div class="col-md-4">
+                <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Nami_0.jpg" class="img-fluid rounded" alt="Nami">
+            </div>
+            <div class="col-md-8">
+                <h3 class="champ-name">Nami</h3>
+                <button class="tab-btn" data-bs-toggle="collapse" data-bs-target="#nami-hab"><strong class="btn-text">Habilidades</strong></button>
+                <button class="tab-btn" data-bs-toggle="collapse" data-bs-target="#nami-lore"><strong class="btn-text">Lore</strong></button>
+                <div class="collapse show mt-3" id="nami-hab">
+                    <p class="champ-text"><strong>Q - Prisão Aquática:</strong> Lança uma bolha que prende inimigos.</p>
+                    <p class="champ-text"><strong>W - Maré Oscilante:</strong> Cura aliados e causa dano a inimigos, saltando entre eles.</p>
+                    <p class="champ-text"><strong>E - Bênção da Conjuradora:</strong> Fortalece ataques de um aliado, causando lentidão.</p>
+                    <p class="champ-text"><strong>R - Onda Gigante:</strong> Invoca uma onda que causa dano, arremessa e causa lentidão.</p>
+                </div>
+                <div class="collapse mt-3" id="nami-lore">
+                    <p class="champ-text">Uma vastaya do mar, busca a Pérola da Maré para salvar seu povo das profundezas.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card mb-4 p-3 shadow border-highlight-jinx" data-role="suporte">
+        <div class="row g-4 align-items-center">
+            <div class="col-md-4">
+                <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Braum_0.jpg" class="img-fluid rounded" alt="Braum">
+            </div>
+            <div class="col-md-8">
+                <h3 class="champ-name">Braum</h3>
+                <button class="tab-btn" data-bs-toggle="collapse" data-bs-target="#braum-hab"><strong class="btn-text">Habilidades</strong></button>
+                <button class="tab-btn" data-bs-toggle="collapse" data-bs-target="#braum-lore"><strong class="btn-text">Lore</strong></button>
+                <div class="collapse show mt-3" id="braum-hab">
+                    <p class="champ-text"><strong>Q - Mordida do Inverno:</strong> Dispara gelo que causa lentidão e aplica passiva.</p>
+                    <p class="champ-text"><strong>W - Ficarei ao Seu Lado:</strong> Salta para um aliado, concedendo armadura e resistência mágica.</p>
+                    <p class="champ-text"><strong>E - Inquebrável:</strong> Levanta seu escudo, bloqueando projéteis e reduzindo dano.</p>
+                    <p class="champ-text"><strong>R - Fissura Glacial:</strong> Bate no chão, arremessando inimigos e criando uma área de lentidão.</p>
+                </div>
+                <div class="collapse mt-3" id="braum-lore">
+                    <p class="champ-text">O coração de Freljord, um herói musculoso e gentil que protege os inocentes com seu enorme escudo.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- LUTADORES -->
+    <div class="card mb-4 p-3 shadow border-highlight-jinx" data-role="lutador">
+        <div class="row g-4 align-items-center">
+            <div class="col-md-4">
+                <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Vi_0.jpg" class="img-fluid rounded" alt="Vi">
+            </div>
+            <div class="col-md-8">
+                <h3 class="champ-name">Vi</h3>
+                <button class="tab-btn" data-bs-toggle="collapse" data-bs-target="#vi-hab"><strong class="btn-text">Habilidades</strong></button>
+                <button class="tab-btn" data-bs-toggle="collapse" data-bs-target="#vi-lore"><strong class="btn-text">Lore</strong></button>
+                <div class="collapse show mt-3" id="vi-hab">
+                    <p class="champ-text"><strong>Q - Quebra-Cofres:</strong> Carrega um soco que a impulsiona para frente, causando dano e empurrando.</p>
+                    <p class="champ-text"><strong>W - Blindagem:</strong> Ataques consecutivos no mesmo alvo causam dano extra e reduzem armadura.</p>
+                    <p class="champ-text"><strong>E - Força Excessiva:</strong> Fortalece o próximo ataque, causando dano em cone.</p>
+                    <p class="champ-text"><strong>R - Acerto e Contusão:</strong> Persegue um alvo, arremessando-o e causando dano.</p>
+                </div>
+                <div class="collapse mt-3" id="vi-lore">
+                    <p class="champ-text">Uma pacificadora de Piltover, usa suas manoplas hextec para impor a lei. Irmã de Jinx e protagonista de Arcane.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card mb-4 p-3 shadow border-highlight-jinx" data-role="lutador">
+        <div class="row g-4 align-items-center">
+            <div class="col-md-4">
+                <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Darius_0.jpg" class="img-fluid rounded" alt="Darius">
+            </div>
+            <div class="col-md-8">
+                <h3 class="champ-name">Darius</h3>
+                <button class="tab-btn" data-bs-toggle="collapse" data-bs-target="#darius-hab"><strong class="btn-text">Habilidades</strong></button>
+                <button class="tab-btn" data-bs-toggle="collapse" data-bs-target="#darius-lore"><strong class="btn-text">Lore</strong></button>
+                <div class="collapse show mt-3" id="darius-hab">
+                    <p class="champ-text"><strong>Q - Dizimar:</strong> Gira seu machado, causando dano em área.</p>
+                    <p class="champ-text"><strong>W - Golpe Mutilador:</strong> Fortalece o próximo ataque, causando lentidão.</p>
+                    <p class="champ-text"><strong>E - Apreender:</strong> Puxa inimigos à sua frente.</p>
+                    <p class="champ-text"><strong>R - Guilhotina de Noxus:</strong> Salta e executa um alvo com dano verdadeiro.</p>
+                </div>
+                <div class="collapse mt-3" id="darius-lore">
+                    <p class="champ-text">A Mão de Noxus, um guerreiro implacável que lidera as legiões de Noxus com força e disciplina.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card mb-4 p-3 shadow border-highlight-jinx" data-role="lutador">
+        <div class="row g-4 align-items-center">
+            <div class="col-md-4">
+                <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Fiora_0.jpg" class="img-fluid rounded" alt="Fiora">
+            </div>
+            <div class="col-md-8">
+                <h3 class="champ-name">Fiora</h3>
+                <button class="tab-btn" data-bs-toggle="collapse" data-bs-target="#fiora-hab"><strong class="btn-text">Habilidades</strong></button>
+                <button class="tab-btn" data-bs-toggle="collapse" data-bs-target="#fiora-lore"><strong class="btn-text">Lore</strong></button>
+                <div class="collapse show mt-3" id="fiora-hab">
+                    <p class="champ-text"><strong>Q - Estocada:</strong> Avança e ataca um alvo próximo.</p>
+                    <p class="champ-text"><strong>W - Réplica:</strong> Bloqueia todo o dano e efeitos de controle por um breve período.</p>
+                    <p class="champ-text"><strong>E - Esgrima:</strong> Fortalece os próximos dois ataques, o segundo causando lentidão.</p>
+                    <p class="champ-text"><strong>R - Grande Desafio:</strong> Revela 4 pontos vitais no alvo, curando-a se todos forem atingidos.</p>
+                </div>
+                <div class="collapse mt-3" id="fiora-lore">
+                    <p class="champ-text">A Grande Duelista de Demacia, luta para restaurar a honra de sua família com sua esgrima impecável.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card mb-4 p-3 shadow border-highlight-jinx" data-role="lutador">
+        <div class="row g-4 align-items-center">
+            <div class="col-md-4">
+                <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Irelia_0.jpg" class="img-fluid rounded" alt="Irelia">
+            </div>
+            <div class="col-md-8">
+                <h3 class="champ-name">Irelia</h3>
+                <button class="tab-btn" data-bs-toggle="collapse" data-bs-target="#irelia-hab"><strong class="btn-text">Habilidades</strong></button>
+                <button class="tab-btn" data-bs-toggle="collapse" data-bs-target="#irelia-lore"><strong class="btn-text">Lore</strong></button>
+                <div class="collapse show mt-3" id="irelia-hab">
+                    <p class="champ-text"><strong>Q - Surto da Lâmina:</strong> Avança em um alvo, redefinindo o tempo de recarga se matar ou acertar um alvo marcado.</p>
+                    <p class="champ-text"><strong>W - Dança Desafiadora:</strong> Carrega um ataque que reduz o dano recebido.</p>
+                    <p class="champ-text"><strong>E - Dueto Desafiador:</strong> Lança duas lâminas que se unem, atordoando inimigos entre elas.</p>
+                    <p class="champ-text"><strong>R - Lâmina da Vanguarda:</strong> Lança uma parede de lâminas que causa dano e desarma inimigos.</p>
+                </div>
+                <div class="collapse mt-3" id="irelia-lore">
+                    <p class="champ-text">A dançarina das lâminas de Ionia, usa suas lâminas flutuantes para defender sua terra natal da invasão Noxiana.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card mb-4 p-3 shadow border-highlight-jinx" data-role="lutador">
+        <div class="row g-4 align-items-center">
+            <div class="col-md-4">
+                <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Sett_0.jpg" class="img-fluid rounded" alt="Sett">
+            </div>
+            <div class="col-md-8">
+                <h3 class="champ-name">Sett</h3>
+                <button class="tab-btn" data-bs-toggle="collapse" data-bs-target="#sett-hab"><strong class="btn-text">Habilidades</strong></button>
+                <button class="tab-btn" data-bs-toggle="collapse" data-bs-target="#sett-lore"><strong class="btn-text">Lore</strong></button>
+                <div class="collapse show mt-3" id="sett-hab">
+                    <p class="champ-text"><strong>Q - Punhos de Nocaute:</strong> Fortalece os próximos ataques, ganhando velocidade de movimento.</p>
+                    <p class="champ-text"><strong>W - Gritão:</strong> Absorve dano e o libera em um soco poderoso em área.</p>
+                    <p class="champ-text"><strong>E - Quebra-Crápios:</strong> Puxa e atordoa inimigos entre ele.</p>
+                    <p class="champ-text"><strong>R - O Grande Espetáculo:</strong> Pega um inimigo e o arremessa no chão, causando dano em área.</p>
+                </div>
+                <div class="collapse mt-3" id="sett-lore">
+                    <p class="champ-text">O Chefe, um vastaya meio-humano que ascendeu ao poder no submundo de Ionia como mestre de arena.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TANKS -->
+    <div class="card mb-4 p-3 shadow border-highlight-jinx" data-role="tank">
+        <div class="row g-4 align-items-center">
+            <div class="col-md-4">
+                <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Malphite_0.jpg" class="img-fluid rounded" alt="Malphite">
+            </div>
+            <div class="col-md-8">
+                <h3 class="champ-name">Malphite</h3>
+                <button class="tab-btn" data-bs-toggle="collapse" data-bs-target="#malphite-hab"><strong class="btn-text">Habilidades</strong></button>
+                <button class="tab-btn" data-bs-toggle="collapse" data-bs-target="#malphite-lore"><strong class="btn-text">Lore</strong></button>
+                <div class="collapse show mt-3" id="malphite-hab">
+                    <p class="champ-text"><strong>Q - Estilhaço:</strong> Lança um fragmento de terra que causa dano e rouba velocidade de movimento.</p>
+                    <p class="champ-text"><strong>W - Trovão:</strong> Fortalece seus ataques e causa dano em cone.</p>
+                    <p class="champ-text"><strong>E - Estrondo:</strong> Bate no chão, causando dano e reduzindo velocidade de ataque.</p>
+                    <p class="champ-text"><strong>R - Força Incontrolável:</strong> Avança em um local, arremessando inimigos.</p>
+                </div>
+                <div class="collapse mt-3" id="malphite-lore">
+                    <p class="champ-text">Um ser elemental de pedra, busca restaurar a ordem em Runeterra após ser invocado de outro plano.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card mb-4 p-3 shadow border-highlight-jinx" data-role="tank">
+        <div class="row g-4 align-items-center">
+            <div class="col-md-4">
+                <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Leona_0.jpg" class="img-fluid rounded" alt="Leona">
+            </div>
+            <div class="col-md-8">
+                <h3 class="champ-name">Leona</h3>
+                <button class="tab-btn" data-bs-toggle="collapse" data-bs-target="#leona-hab"><strong class="btn-text">Habilidades</strong></button>
+                <button class="tab-btn" data-bs-toggle="collapse" data-bs-target="#leona-lore"><strong class="btn-text">Lore</strong></button>
+                <div class="collapse show mt-3" id="leona-hab">
+                    <p class="champ-text"><strong>Q - Escudo da Aurora:</strong> Fortalece o próximo ataque para atordoar o alvo.</p>
+                    <p class="champ-text"><strong>W - Égide da Proteção:</strong> Ganha resistência e explode, causando dano.</p>
+                    <p class="champ-text"><strong>E - Lâmina Zênite:</strong> Avança em linha reta, enraizando o último inimigo atingido.</p>
+                    <p class="champ-text"><strong>R - Explosão Solar:</strong> Invoca um raio de sol que causa dano e atordoa no centro.</p>
+                </div>
+                <div class="collapse mt-3" id="leona-lore">
+                    <p class="champ-text">A Alvorada Radiante, uma guerreira Solari de Targon que usa o poder do sol para proteger os inocentes.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card mb-4 p-3 shadow border-highlight-jinx" data-role="tank">
+        <div class="row g-4 align-items-center">
+            <div class="col-md-4">
+                <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Sion_0.jpg" class="img-fluid rounded" alt="Sion">
+            </div>
+            <div class="col-md-8">
+                <h3 class="champ-name">Sion</h3>
+                <button class="tab-btn" data-bs-toggle="collapse" data-bs-target="#sion-hab"><strong class="btn-text">Habilidades</strong></button>
+                <button class="tab-btn" data-bs-toggle="collapse" data-bs-target="#sion-lore"><strong class="btn-text">Lore</strong></button>
+                <div class="collapse show mt-3" id="sion-hab">
+                    <p class="champ-text"><strong>Q - Golpe Demolidor:</strong> Carrega um golpe que arremessa e causa dano.</p>
+                    <p class="champ-text"><strong>W - Fornalha da Alma:</strong> Ganha um escudo que pode ser detonado para causar dano.</p>
+                    <p class="champ-text"><strong>E - Grito do Ceifador:</strong> Lança um grito que causa lentidão e empurra o alvo.</p>
+                    <p class="champ-text"><strong>R - Carga Incontrolável:</strong> Avança em linha reta, ganhando velocidade e atordoando o primeiro campeão atingido.</p>
+                </div>
+                <div class="collapse mt-3" id="sion-lore">
+                    <p class="champ-text">O Colosso Morto-Vivo de Noxus, ressuscitado para servir o império com sua força bruta e indestrutível.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card mb-4 p-3 shadow border-highlight-jinx" data-role="tank">
+        <div class="row g-4 align-items-center">
+            <div class="col-md-4">
+                <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Ornn_0.jpg" class="img-fluid rounded" alt="Ornn">
+            </div>
+            <div class="col-md-8">
+                <h3 class="champ-name">Ornn</h3>
+                <button class="tab-btn" data-bs-toggle="collapse" data-bs-target="#ornn-hab"><strong class="btn-text">Habilidades</strong></button>
+                <button class="tab-btn" data-bs-toggle="collapse" data-bs-target="#ornn-lore"><strong class="btn-text">Lore</strong></button>
+                <div class="collapse show mt-3" id="ornn-hab">
+                    <p class="champ-text"><strong>Q - Ruptura:</strong> Cria uma fissura no chão que se transforma em pilar de rocha.</p>
+                    <p class="champ-text"><strong>W - Sopro de Fole:</strong> Expele fogo que marca inimigos, tornando-os 'Frágeis'.</p>
+                    <p class="champ-text"><strong>E - Investida Magmática:</strong> Investe, causando dano e arremessando se atingir um pilar.</p>
+                    <p class="champ-text"><strong>R - Chamado do Deus da Forja:</strong> Invoca um elemental de fogo que avança e pode ser redirecionado.</p>
+                </div>
+                <div class="collapse mt-3" id="ornn-lore">
+                    <p class="champ-text">O Deus da Forja de Freljord, um ser recluso que forja itens lendários e despreza a violência, mas luta quando necessário.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card mb-4 p-3 shadow border-highlight-jinx" data-role="tank">
+        <div class="row g-4 align-items-center">
+            <div class="col-md-4">
+                <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Rammus_0.jpg" class="img-fluid rounded" alt="Rammus">
+            </div>
+            <div class="col-md-8">
+                <h3 class="champ-name">Rammus</h3>
+                <button class="tab-btn" data-bs-toggle="collapse" data-bs-target="#rammus-hab"><strong class="btn-text">Habilidades</strong></button>
+                <button class="tab-btn" data-bs-toggle="collapse" data-bs-target="#rammus-lore"><strong class="btn-text">Lore</strong></button>
+                <div class="collapse show mt-3" id="rammus-hab">
+                    <p class="champ-text"><strong>Q - Bola do Poder:</strong> Enrola-se e ganha velocidade, colidindo com o primeiro inimigo.</p>
+                    <p class="champ-text"><strong>W - Posição Defensiva:</strong> Aumenta armadura e resistência mágica, refletindo dano.</p>
+                    <p class="champ-text"><strong>E - Provocação Frenética:</strong> Provoca um inimigo, forçando-o a atacá-lo.</p>
+                    <p class="champ-text"><strong>R - Estrondo:</strong> Salta e bate no chão, causando dano e lentidão.</p>
+                </div>
+                <div class="collapse mt-3" id="rammus-lore">
+                    <p class="champ-text">Um misterioso ser blindado do Deserto de Shurima, conhecido por sua velocidade e resistência inigualáveis.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+        <!-- Barra Lateral de Personagens -->
+        <div class="col-lg-3">
+            <div class="card p-3 mb-4">
+                <h4 class="text-white border-bottom pb-2 mb-3">Filtros Rápidos</h4>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><a href="#Atirador" class="text-white-50">Atiradores</a></li>
+                    <li class="mb-2"><a href="#Mago" class="text-white-50">Magos</a></li>
+                    <li class="mb-2"><a href="#Suporte" class="text-white-50">Suportes</a></li>
+                    <li class="mb-2"><a href="#Lutador" class="text-white-50">Lutadores</a></li>
+                    <li class="mb-2"><a href="#Tank" class="text-white-50">Tank</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</main>
+    <footer class="bg-dark text-center text-white-50 py-3">
+        <div class="container">
+            <p class="mb-0">&copy; 2025 League of Legends - Wiki. Todos os direitos reservados. Este site é um projeto de fã e não é afiliado à Riot Games.</p>
+            <p class="mb-0"><a href="index.html" class="text-white-50 mx-2">Home</a> | <a href="personagens.html" class="text-white-50 mx-2">Personagens</a> | <a href="contato.html" class="text-white-50 mx-2">Contato</a></p>
+        </div>
+    </footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const championList = document.getElementById('champion-list');
+        const championCards = championList.querySelectorAll('.card');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                // Remove a classe 'active' de todos os botões
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                
+                // Adiciona a classe 'active' ao botão clicado
+                this.classList.add('active');
+
+                const filterRole = this.getAttribute('data-filter');
+
+                championCards.forEach(card => {
+                    const cardRole = card.getAttribute('data-role');
+                    
+                    if (filterRole === 'all' || cardRole === filterRole) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+    });
+</script>
+</body>
+</html>
