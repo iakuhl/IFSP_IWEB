@@ -47,7 +47,7 @@ textarea::placeholder {
 }
 
 /* Header */
-header.bg-gradient {
+.faixa-gradiente {
     background: linear-gradient(to right, var(--color-primary), var(--color-secondary));
     padding: 80px 0;
     text-align: center;
@@ -96,14 +96,14 @@ header.bg-gradient {
 }
 
 /* Cards lado a lado */
-.row-md-4 {
+.grade-cartoes {
     display: flex;
     flex-direction: row;
     gap: 1.5rem;
     flex-wrap: wrap;
 }
 
-.row-md-4 > .card {
+.grade-cartoes > .card {
     flex: 1;
     min-width: 250px;
 }
